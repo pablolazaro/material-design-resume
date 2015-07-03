@@ -1,0 +1,188 @@
+<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="bower_components/iron-icons/social-icons.html">
+<link rel="import" href="bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="bower_components/paper-styles/paper-styles.html">
+<dom-module id="personal-information-panel">
+
+  <style>
+
+  	:host {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		flex-direction: column;
+		justify-content: space-round;
+
+		font-family: 'Roboto', 'Noto', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+  	}
+
+  	#photo {
+      -webkit-box-flex: 0.5;
+      -moz-box-flex:  0.5;
+      -webkit-flex:  0.5;
+      -ms-flex:  0.5;
+      flex:  0.5;
+      background-size: cover;
+    }
+
+    #personal-information {
+      background-color: #64B5F6;
+      /*background-color: #2196F3;*/
+  
+      -webkit-box-flex: 1;
+      -moz-box-flex:  1;
+      -webkit-flex:  1;
+      -ms-flex:  1;
+      flex:  1;
+    }
+
+    #personal-information .item {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		align-items: baseline;
+
+
+    }
+
+    #personal-information .item span {
+      font-size: 14px;
+    }
+
+    #personal-information .item p {
+      margin-bottom: 0;
+    }
+
+    #personal-information .item .left {
+      -webkit-box-flex: .30;
+      -moz-box-flex:  .30;
+      -webkit-flex:  .30;
+      -ms-flex:  .30;
+      flex:  .30;
+      text-align: center;
+    }
+
+    #personal-information .item .right {
+      -webkit-box-flex: 1;
+      -moz-box-flex:  1;
+      -webkit-flex:  1;
+      -ms-flex:  1;
+      flex:  1;
+    }
+
+
+  </style>
+
+  <template>
+  	<!-- Contains personal image-->
+  	<div id="photo"></div>
+
+  	<div id="personal-information">
+  		
+  		<!-- Name item -->
+  		<template is="dom-if" if="{{name}}">
+			<div class="item">
+	            <div class="left">
+	              <iron-icon icon="social:person" class="big"></iron-icon>
+	            </div>
+	            <div class="right">
+	              <p>{{name}}</p>
+	              <hr>
+	            </div>
+          	</div>
+  		</template>
+
+  		<!-- Phones item -->
+  		<template is="dom-if" if="{{phones}}">
+	  		<div class="item">
+	            <div class="left">
+	              <iron-icon icon="maps:local-phone"></iron-icon>
+	            </div>
+	            <div class="right">
+	        	  <template is="dom-repeat" items="{{phones}}" as="phone">
+	        	  	<p>{{phone.number}}</p>
+	              	<span>{{phone.type}}</span>
+	        	  </template>
+	              <hr>
+	            </div>
+	         </div>
+        </template>
+
+   		<!-- Email item -->
+   		<template is="dom-if" if="{{emails}}">
+	  		<div class="item">
+	            <div class="left">
+	              <iron-icon icon="maps:local-post-office"></iron-icon>
+	            </div>
+	            <div class="right">
+	        	  <template is="dom-repeat" items="{{emails}}" as="email">
+	        	  	<p>{{email.account}}</p>
+	              	<span>{{email.type}}</span>
+	        	  </template>
+	              <hr>
+	            </div>
+        	</div>
+	    </template>
+
+	    <!-- Location item -->
+   		<template is="dom-if" if="{{location}}">
+	  		<div class="item">
+	            <div class="left">
+	              <iron-icon icon="social:location-city"></iron-icon>
+	            </div>
+	            <div class="right">
+	        	  <p>{{location.city}}</p>
+	        	  <p>{{location.country}}</p>
+	              <hr>
+	            </div>
+        	</div>
+	    </template>
+
+  	</div>
+    
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'personal-information-panel',
+
+    properties: {
+    	photoUrl: {
+    		type: String,
+    		observer: '_updatePhoto'
+    	},
+    	name: String,
+    	personalDescription: String,
+    	phones: Array,
+    	mails: Array,
+    	location: Object
+    },
+
+    setPhotoUrl: function (url) {
+    	this.photoUrl = url;
+    },
+
+    _updatePhoto: function (url) {
+    	this.$.photo.style.backgroundImage = 'url("' + url + '")';
+    }
+
+  });
+
+</script>
