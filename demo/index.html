@@ -18,18 +18,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body>
 
-    <p>An example of <code>&lt;material-design-resume&gt;</code>:</p>
-
-    <button>Say Something</button>
-
-    <material-design-resume author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-      <h2>Hello material-design-resume</h2>
-    </material-design-resume>
+    <material-design-resume></material-design-resume>
 
     <script>
-      document.querySelector('button').addEventListener('click', function() {
-        alert(document.querySelector('material-design-resume').sayHello('Hallo!'));
-      });
+      var data = {
+        name: 'Pablo Lázaro',
+        description: 'Front end Developer',
+        photoUrl: 'https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png',
+        phones: [
+          { number: 6987458745, type: 'Personal'},
+          { number: 917845748, type: 'Work'}
+        ],
+        emails: [
+          { account: 'pablolazaro@gmail.com', type: 'Personal' },
+          { account: 'pablo.lazaro@adesis.com', type: 'Work' }
+        ],
+        location: {
+          city: 'Madrid',
+          country: 'Spain'
+        }
+      };
+
+      document.querySelector('material-design-resume').setData(data);
     </script>
 
   </body>
