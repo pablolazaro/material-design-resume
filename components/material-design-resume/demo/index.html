@@ -1,0 +1,46 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>material-design-resume Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../material-design-resume.html">
+  </head>
+  <body>
+
+    <material-design-resume></material-design-resume>
+
+    <script>
+      var data = {
+        name: 'Pablo Lázaro',
+        description: 'Front end Developer',
+        photoUrl: 'https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png',
+        phones: [
+          { number: 6987458745, type: 'Personal'},
+          { number: 917845748, type: 'Work'}
+        ],
+        emails: [
+          { account: 'pablolazaro@gmail.com', type: 'Personal' },
+          { account: 'pablo.lazaro@adesis.com', type: 'Work' }
+        ],
+        location: {
+          city: 'Madrid',
+          country: 'Spain'
+        }
+      };
+
+      document.querySelector('material-design-resume').setData(data);
+    </script>
+
+  </body>
+</html>

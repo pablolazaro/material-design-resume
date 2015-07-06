@@ -1,0 +1,70 @@
+<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="personal-information-panel.html">
+
+<!--
+An element to generate a resume with material design look & feel.
+
+Example:
+
+    <material-design-resume></material-design-resume>
+
+@demo
+-->
+<dom-module id="material-design-resume">
+
+  <style>
+    paper-drawer-panel {
+
+      --paper-drawer-panel-main-container: {
+        background-color: #f5f5f5;
+        overflow: scroll;
+      };
+
+      --paper-drawer-panel-drawer-container: {
+        color: white;
+        box-shadow: 2px 0 2px #888888;    
+      };
+    }
+  </style>
+
+  <template>
+    <paper-drawer-panel>
+      <!-- Drawer panel -->
+      <personal-information-panel 
+        drawer
+        photo-url="{{data.photoUrl}}"
+        name="{{data.name}}"
+        phones="{{data.phones}}"
+        emails="{{data.emails}}"
+        location="{{data.location}}">
+      </personal-information-panel>
+      
+
+      <!-- Main panel -->
+      <div main>
+        
+      </div>
+    </paper-drawer-panel>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'material-design-resume',
+
+    properties: {
+      data: {
+        type: Object
+      }
+    },
+
+    setData: function (data) {
+      this.data = data;
+    }
+
+  });
+
+</script>

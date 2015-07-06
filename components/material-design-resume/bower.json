@@ -1,0 +1,35 @@
+{
+  "name": "material-design-resume",
+  "version": "1.0.0",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "material-design-resume.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#1.0.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#1.0.0",
+    "iron-image": "PolymerElements/iron-image#1.0.0",
+    "paper-item": "PolymerElements/paper-item#1.0.0",
+    "iron-icons": "polymerelements/iron-icons#1.0.0",
+    "paper-material": "PolymerElements/paper-material#1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

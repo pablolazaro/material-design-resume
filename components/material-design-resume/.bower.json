@@ -1,0 +1,44 @@
+{
+  "name": "material-design-resume",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "material-design-resume.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#1.0.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#1.0.0",
+    "iron-image": "PolymerElements/iron-image#1.0.0",
+    "paper-item": "PolymerElements/paper-item#1.0.0",
+    "iron-icons": "polymerelements/iron-icons#1.0.0",
+    "paper-material": "PolymerElements/paper-material#1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "86b888c4ef",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "86b888c4eff01b62c94ce0953f3d3d3c6bd6143f"
+  },
+  "_source": "git://github.com/pablolazaro/material-design-resume.git",
+  "_target": "master",
+  "_originalSource": "pablolazaro/material-design-resume",
+  "_direct": true
+}
